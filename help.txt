@@ -1,0 +1,28 @@
+1. Comprendre les Bases :
+	Révise fork et execve : Assure-toi de bien comprendre comment ces fonctions créent des processus et exécutent des programmes.
+	Révise les pipes : Comprends comment utiliser pipe() pour créer une communication entre deux processus (écriture et lecture de données entre deux commandes).
+2. Créer un Pipe Basique :
+Commence par coder un programme qui crée un pipe entre deux processus.
+	Utilise fork() pour créer deux enfants : un qui écrit dans le pipe (simule une commande source) et un autre qui lit (simule une commande destination).
+	Vérifie que les données se transfèrent correctement via le pipe.
+3. Implémenter une Commande Simple :
+	Utilise execve ou execvp pour que chacun des processus enfants exécute une commande (comme ls ou grep).
+	Par exemple, le premier enfant pourrait exécuter ls, et le second pourrait exécuter grep pour filtrer la sortie.
+4. Gérer les Fichiers (Redirections) :
+	Implémente la redirection des fichiers avec dup2 pour rediriger l’entrée ou la sortie d’une commande vers un fichier.
+	Par exemple, pour Pipex, tu devras rediriger l’entrée du premier enfant vers un fichier et la sortie du deuxième enfant vers un autre fichier.
+5. Construire le Pipeline Complet :
+	Une fois que tu as réussi à faire communiquer deux processus avec un pipe, ajoute les redirections pour les fichiers d'entrée et de sortie.
+	Gère plusieurs pipes si ton projet le demande, pour connecter plus de deux commandes.
+6. Erreurs et Gestion des Signaux :
+	Ne néglige pas la gestion des erreurs avec des vérifications comme if (pipe() == -1) pour s’assurer que tout fonctionne.
+	Gère la terminaison des processus correctement (par exemple, avec waitpid pour s'assurer que le parent attend la fin de ses enfants).
+Résumé des étapes :
+	Comprends fork, exec et pipe.
+	Coder un pipe simple entre deux processus enfants.
+	Utiliser exec pour exécuter des commandes.
+	Ajouter les redirections de fichiers avec dup2.
+	Construire le pipeline complet.
+	Gérer les erreurs et signaux.
+Tu peux commencer par la partie pipe simple avec deux enfants pour bien comprendre le mécanisme de communication entre eux.
+
