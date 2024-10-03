@@ -5,22 +5,27 @@ CFLAGS =  -Wall -Wextra -Wno-unused-parameter
 SRC = src/main.c
 
 OBJS = $(SRC:.c=.o)
-HEADERS = -Iincludes
+HEADERS = -Iincludes -Ilib/libft/includes
+LIBFT = lib/libft/libft.a
+LIBS = -Llib/libft -lft
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	@$(CC) $(OBJS) -o $(NAME) $(CFLAGS)
+$(NAME): $(OBJS) $(LIBFT)
+	@$(CC) $(OBJS) -o $(NAME) $(CFLAGS) $(LIBS)
 
 %.o: %.c
 	@$(CC) $(CFLAGS) $(HEADERS) -c $< -o $@
 
+$(LIBFT):
+	@make -C lib/libft
+
 clean:
-	@make -C clean --silent
+	@make -C lib/libft clean --silent
 	@rm -f $(OBJS)
 
 fclean: clean
-	@make -C fclean --silent
+	@make -C lib/libft fclean --silent
 	@rm -f $(NAME)
 
 re: fclean all
