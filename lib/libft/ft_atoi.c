@@ -6,7 +6,7 @@
 /*   By: moni <moni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:14:34 by monoguei          #+#    #+#             */
-/*   Updated: 2024/05/07 15:12:44 by moni             ###   ########.fr       */
+/*   Updated: 2024/10/06 19:45:24 by moni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,6 @@
 // convertir char en int
 
 int	ft_isdigit(int character);
-
-static int	ft_iswhitespace(int c)
-{
-	if (c == 32 || c == 9 || c == 10 || c == 11 || c == 12 || c == 13)
-		return (1);
-	return (0);
-}
 
 int	ft_atoi(const char *str)
 {
