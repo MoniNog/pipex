@@ -1,5 +1,17 @@
-#ifndef FT_PIPEX_H
-# define FT_PIPEX_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pipex.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: moni <moni@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/07 16:32:47 by moni              #+#    #+#             */
+/*   Updated: 2024/10/07 16:33:13 by moni             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PIPEX_H
+# define PIPEX_H
 
 # include <stdio.h>
 # include <unistd.h>
@@ -22,6 +34,6 @@ typedef struct s_pipex
 	char	**cmd_path;
 	char	***cmd_args;
 	int		cmd_count;
-} 			t_pipex;
+}			t_pipex;
 
 #endif
