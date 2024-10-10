@@ -6,7 +6,7 @@
 /*   By: moni <moni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 16:32:47 by moni              #+#    #+#             */
-/*   Updated: 2024/10/07 16:33:13 by moni             ###   ########.fr       */
+/*   Updated: 2024/10/10 14:26:17 by moni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include <sys/wait.h>
 # include <fcntl.h>
 # include "libft.h"
+# include <signal.h>
 
 typedef struct s_pipex
 {
