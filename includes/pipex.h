@@ -6,7 +6,7 @@
 /*   By: moni <moni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 16:32:47 by moni              #+#    #+#             */
-/*   Updated: 2024/10/10 14:26:17 by moni             ###   ########.fr       */
+/*   Updated: 2024/10/21 16:17:39 by moni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,10 @@
 # include "libft.h"
 # include <signal.h>
 
-typedef struct s_pipex
-{
-	int		in_fd;
-	int		out_fd;
-	bool	here_doc;
-	bool	is_valid_infile;
-	char	**cmd_path;
-	char	***cmd_args;
-	int		cmd_count;
-}			t_pipex;
+void	error_kill_exit(int file_in, char *file_name, pid_t pid);
+void	print_error(const char *text);
+void	error_access(char *file_name);
+char	*find_path(char *cmd, char **envp);
+void	free_split(char **cmd);
 
 #endif

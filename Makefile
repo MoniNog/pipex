@@ -2,7 +2,7 @@ NAME = pipex
 CC = gcc
 CFLAGS =  -Wall -Wextra -Wno-unused-parameter
 
-SRC = src/main.c
+SRC = src/main.c src/utils.c
 
 OBJS = $(SRC:.c=.o)
 HEADERS = -Iincludes -Ilib/libft/includes
